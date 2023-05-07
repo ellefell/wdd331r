@@ -1,0 +1,171 @@
+/* the font for the headlines is Lora and can be found on Google fonts. */
+/*
+add variables, 
+nesting, 
+and mixins where appropriate. 
+You must however use each of those at least once.
+colors:
+body-copy: #333
+light-grey color of lines: #d0d0d0
+navigation links - normal & visited #666
+navigation links - active #DEB887
+navigation links - hover #00ddff
+h1 link - #333*/
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
+/*Variables*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding: 2em;
+}
+
+h1 a {
+  text-decoration: none;
+  color: #333;
+}
+
+a, :visited {
+  text-decoration: none;
+  color: #666;
+}
+
+h1 {
+  margin: 0.6em 0;
+  font-family: "Lora", serif;
+  font-size: 4em;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Lora", serif;
+}
+
+/* The font list for the body copy is: Helvetica, Arial, sans-serif, and the color should be $base-text. */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+/* LINKS */
+/* Navigation links should behave thus: normal and visited: #666 and no underline , active: #DEB887, hover: #00ddff */
+/* You can use $accents for the light grey color of the lines. */
+nav {
+  border-top: 1px solid #d0d0d0;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+nav ul {
+  font-family: "Lora", serif;
+  list-style: none;
+  text-transform: uppercase;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+nav ul li {
+  font-size: 1.2em;
+  margin: 1em 0;
+  font-weight: 600;
+  text-decoration: none;
+  color: #666;
+}
+nav ul li a:active {
+  color: #DEB887;
+}
+nav ul li a:hover {
+  color: #00ddff;
+}
+
+h2 a {
+  color: gray;
+}
+
+h2 > a:active {
+  color: #DEB887;
+}
+
+h2 > a:hover {
+  text-decoration: none;
+}
+
+p a {
+  color: #333;
+}
+
+p a:active {
+  color: #DEB887;
+}
+
+p a:hover {
+  text-decoration: none;
+}
+
+/* MAIN */
+article {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2em;
+  padding-bottom: 0;
+  padding-top: 0;
+  background-color: white;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.post-date {
+  text-transform: uppercase;
+  font-family: "Lora", serif;
+  font-size: 1.5em;
+  font-weight: 500;
+  text-align: right;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+section h2 {
+  margin: 1em 0;
+}
+
+section h2 a {
+  font-size: 1.2em;
+  font-weight: 500;
+  line-height: 1.1em;
+}
+
+figure {
+  width: 200px;
+  margin: 4em auto 1em auto;
+}
+
+img {
+  width: 100%;
+}
+
+@media only screen and (min-width: 720px) {
+  main > article {
+    display: grid;
+    row-gap: 15px;
+    grid-template-columns: 1fr 2fr;
+    border-bottom: none;
+  }
+  nav li {
+    display: inline;
+    padding: 2em;
+    margin: 3em;
+  }
+  .post-date {
+    float: left;
+    max-width: 125px;
+    border-bottom: none;
+    padding: 15px;
+    border-right: 1px solid #d0d0d0;
+  }
+  main {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,6 +1,30 @@
 
 /* the font for the headlines is Lora and can be found on Google fonts. */
+/*
+add variables, 
+nesting, 
+and mixins where appropriate. 
+You must however use each of those at least once.
+colors:
+body-copy: #333
+light-grey color of lines: #d0d0d0
+navigation links - normal & visited #666
+navigation links - active #DEB887
+navigation links - hover #00ddff
+h1 link - #333*/
+@mixin border-bottom{
+    border-bottom: 1px solid $accents;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+
+
+/*Variables*/
+$base-text: #333;
+$accents: #d0d0d0;
+$secondary: #DEB887;
+$tertiary: #00ddff;
+
 
 * {
     margin: 0;
@@ -14,12 +38,12 @@ header {
 
 h1 a {
     text-decoration: none;
-    color: black;
+    color: $base-text;
 }
 
-a{
+a, :visited{
     text-decoration: none;
-    color:#333;
+    color:#666;
 }
 
 h1 {
@@ -35,21 +59,20 @@ h2 {
     
     
 }
-/* The font list for the body copy is: Helvetica, Arial, sans-serif, and the color should be #333. */
+/* The font list for the body copy is: Helvetica, Arial, sans-serif, and the color should be $base-text. */
 body {
     font-family: Helvetica, Arial, sans-serif;
-    color: #333;
+    color: $base-text;
 }
 
 
 
 /* LINKS */
 /* Navigation links should behave thus: normal and visited: #666 and no underline , active: #DEB887, hover: #00ddff */
-/* You can use #d0d0d0 for the light grey color of the lines. */
+/* You can use $accents for the light grey color of the lines. */
 nav {
-    border-top: 1px solid #d0d0d0;
-    border-bottom: 1px solid #d0d0d0;
-    
+    border-top: 1px solid $accents;
+    @include border-bottom;
 }
 
 nav ul {
@@ -63,29 +86,28 @@ nav ul {
     
 }
 
+//nesting nav
 nav ul li {
     font-size: 1.2em;
     margin: 1em 0;
 	font-weight: 600;
     text-decoration: none;
     color: #666;
-   
+
+    a:active{
+        color:$secondary;
+    }
+
+    a:hover{
+        color: $tertiary;
+    }
 	
 }
 
-nav > ul > li > a:active {
-    
-    color: $secondary;
-    
-}
 
-nav ul li a:hover {
-    
-    color: $tertiary;
-}
 
 h2 a {
-    color: #333;
+    color: gray;
 }
 
 h2 > a:active {
@@ -98,7 +120,7 @@ h2 > a:hover {
 }
 
 p a {
-    color: #333;
+    color: $base-text;
 }
 
 p a:active {
@@ -120,7 +142,7 @@ article {
     padding-top: 0;
     background-color: white;
     margin-bottom: 1em;
-    border-bottom: 1px solid #d0d0d0;
+    @include border-bottom;
 }
 
 .post-date {
@@ -129,7 +151,7 @@ article {
     font-size: 1.5em;
     font-weight: 500;
     text-align: right;
-    border-bottom: 1px solid #d0d0d0;
+    @include border-bottom;
     
     
 }
@@ -154,6 +176,10 @@ img {
     width: 100%;
 }
 
+
+
+
+
  @media only screen and (min-width: 720px) {
     main > article {
         display: grid;
@@ -175,8 +201,7 @@ img {
         max-width: 125px;
         border-bottom: none;
         padding: 15px;
-
-        border-right: 1px solid #d0d0d0;
+        border-right: 1px solid $accents;
     } 
     main {  
         width: 100%;
