@@ -23,4 +23,4 @@ Step 2:  Upload Your CSS file, a screenshot of your finished page in the browser
  
 *If you need a refresher on responsiveness and media queries check out this course on Sitepoint:Introduction to Responsive Web Design
 
-John Fell
+
