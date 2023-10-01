@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
+/* ----------------------------------------------------------------- */
+/*                              SMALL SCREEN                         */
+/* ----------------------------------------------------------------- */
+
+/* Responsive Images */
+
+img
+{
+
+    max-width: 100%;
+    /*vertical-align: middle;*/
+    background-position: center;
+    image-rendering: optimizeQuality;
+
+
+}
+
+/* --------------------------------------------------------------- */
+/*                             VARIABLES                           */
+/* --------------------------------------------------------------- */
+$header-color: #333;
+$link-color: #666;
+$nav-color: #d0d0d0;
+$font-family: 'Lora';
+
+/* --------------------------------------------------------------- */
+/*                             MIXINS                              */
+/* --------------------------------------------------------------- */
+@mixin font-set ($size: 18px, $align: center)
+{
+    font-family: $font-family;
+    font-size: $size;
+    text-align: $align;
+
+}
+
+
+/* --------------------------------------------------------------- */
+/*                             FORMATTING                          */
+/* --------------------------------------------------------------- */
+
+/* links */
+
+a 
+{
+    &:link 
+    {
+        color:$link-color;
+        text-decoration:none;
+    }
+
+    &:visited
+    {
+        color:$link-color;
+        text-decoration:none;
+    }
+
+    &:active
+    {
+        color: #DEB887;
+        text-decoration-color: $nav-color;
+    
+    }
+
+    &:hover
+    {
+        color: #00ddff;
+        text-decoration-color: $nav-color;
+    
+    }    
+
+}
+
+/* Title */
+h1 a:hover {
+
+    color:$header-color;
+    
+
+}
+
+h1 a:link
+{
+
+    color:$header-color;
+
+}
+
+    
+/* Lists */
+nav{
+
+    border-top: 1px solid $nav-color;
+    border-bottom: 1px solid $nav-color;
+
+
+}
+
+
+
+li{
+    padding: 5px;
+}
+
+
+
+/* Dates */
+
+
+/* body */
+body
+{
+
+    font-family: Helvetica, Arial, sans-serif;
+    color: $header-color;
+    font-size: 14px;
+}
+
+/* headers */
+h1 {
+    @include font-set(65px, center);
+    color: $header-color;
+
+}
+
+h2 {
+    font-family: $font-family;
+}
+
+article
+{
+    padding-bottom: 30px;
+    
+    
+}
+
+.post-content
+{
+
+    border-bottom: 0.5px dashed #c4c4c4;
+
+}
+
+
+/* ----------------------------------------------------------------- */
+/*                              SMALL SCREEN                         */
+/* ----------------------------------------------------------------- */
+
+/* Media Queries */
+@media screen and (max-width: 600px)
+{
+
+      
+      div {
+
+        padding: 2%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 25% 25% 25% 25%;
+        grid-gap: 20px;
+      }
+
+      ul
+      {
+        list-style-type: none; /* Remove bullets */
+        @include font-set(18px, center);
+        text-transform: uppercase;
+        
+    }
+
+    li
+    {
+        float: none;
+    }
+
+    .post-date
+    {
+
+        text-transform: uppercase;
+        text-align: right;
+        border-bottom: 1px solid $nav-color;
+        padding-top: 15px;
+        padding-bottom: 5px;
+    
+    }
+
+
+      
+
+}
+
+
+/* ----------------------------------------------------------------- */
+/*                              LARGE SCREEN                         */
+/* ----------------------------------------------------------------- */
+
+@media screen and (min-width: 601px)
+{
+
+
+      
+      article {
+
+        padding: 10px;
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 1fr;
+        grid-gap: 10px;
+        grid-template-areas: 
+                      "post-date post-content "
+
+
+
+      }
+
+
+
+      ul{
+        list-style-type: none; /* Remove bullets */
+        text-transform: uppercase;
+        @include font-set(18px, right);
+        width:auto;
+        display: flex;
+        justify-content: right;
+        
+    }
+
+    li
+    {
+        /*width: 100%;*/
+        float: left;
+        text-align: right;
+        padding: 0.5em;
+
+    }
+
+    nav
+    {
+        float: left;
+        padding-bottom: 0px;
+        width: 100%;
+
+    }
+
+     .post-date{
+        grid-area: post-date;
+        text-transform: uppercase;
+        text-align: right;
+        border-right: 1px solid $nav-color;
+        border-bottom: none;
+        padding-top: 15px;
+        padding-bottom: 5px;
+        padding-right: 10%;        
+    
+    } 
+
+
+    .post-content
+    {
+
+        grid-area: post-content;
+
+
+    }
+
+
+    figure
+    {
+        margin-left: 25%;
+        margin-right: 25%;
+
+    }
+      
+    
+
+
+}
