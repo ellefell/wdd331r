@@ -1,0 +1,55 @@
+@use 'atoms' as a;
+@use 'molecules' as m;
+@use 'organisms' as o;
+@use 'variables' as v;
+
+html {
+    background-color: v.$background-color;
+    padding: 5%;
+  }
+  
+  body {
+    font-family: v.$para-font;
+    color: v.$font-color;
+    background-color: v.$element-color;
+    @include a.white-space(0);
+  }
+  
+  section {
+    background-color: white;
+    @include a.white-space(1em);
+  }
+
+.page-wrapper{
+    display: grid;
+    
+  }
+
+.intro{
+    grid-column: 1 / span 2;
+    
+}
+
+.preamble{
+    grid-column: 1 / span 2;
+	grid-row: 2 ;
+}
+.sidebar{
+		grid-column: 3 ;
+		grid-row: 1 / span 2;
+	}
+
+#zen-supporting{
+    display: grid;
+}
+    .explanation{
+		grid-column: 1 / span 4;
+		grid-row: 3;
+	
+}
+    .participation{
+        grid-column: 1 / span 4;
+		grid-row: 4;
+    }
+  
+
