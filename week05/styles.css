@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css?family=Zilla+Slab&display=swap");
+h2 {
+  font-family: "Zilla Slab";
+  font-size: medium;
+  text-align: center;
+}
+
+.card-grid {
+  border: 2px dashed;
+}
+.card-grid .row-grid {
+  display: flex;
+  gap: 20px 10px;
+  flex-flow: row wrap;
+  padding: 20px;
+}
+.card-grid .row-grid .card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid;
+  border-radius: 0.5em;
+  padding-bottom: 1.5em;
+}
+.card-grid .row-grid .card img {
+  width: 200px;
+  align-self: center;
+  vertical-align: top;
+}
+.card-grid .col-grid {
+  display: flex;
+  gap: 20px 10px;
+  flex-flow: row wrap;
+  padding: 20px;
+}
+.card-grid .col-grid .card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid;
+  border-radius: 0.5em;
+  padding-bottom: 1.5em;
+}
+.card-grid .col-grid .card img {
+  width: 200px;
+  align-self: center;
+  vertical-align: top;
+}
+
+/*# sourceMappingURL=styles.css.map */
